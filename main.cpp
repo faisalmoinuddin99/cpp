@@ -1,35 +1,29 @@
 #include<bits/stdc++.h>
-#include<string>
+#include<vector>
 
 using namespace std ;
 
-bool isValid(char ch){
-    if((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || 
-    (ch >= '0' && ch <= '9')){
-        return true ;
-    } else {
-        return false ;
-    }
-}
-void removeCharAndSpace(string sen) {
-    int start = 0;
-    int end = sen.length() - 1 ;
-    while(start <= end) {
-        if(!isValid(sen[start])) {
-            start++ ;
-            continue ;
-        }
-        else{
-            cout<<sen[start] ;
-            start++ ;
-        }
-    }
-    cout<<"\n" ;
-}
 int main(){
 
-    string sentence = "N2 i&nJA?a& jnI2n" ;
-    // cout<<"Raw Sentence: "<<sentence <<'\n';
-    removeCharAndSpace(sentence) ;
-    return 0 ;
+   vector<int> a ;
+
+    a.push_back(-1) ;
+    a.push_back(6) ;
+    a.push_back(2) ;
+    a.push_back(-4) ;
+    a.push_back(3) ;
+    a.push_back(7) ;
+    a.push_back(9) ;
+    a.push_back(11) ;
+    a.push_back(5) ;
+    int target ;
+    cin >> target ;
+   for(int i = 0; i < a.size()-1; i++){
+    for(int j = i + 1; j < a.size() - 1; j++){
+        if(a[i] + a[j] == target){
+            cout<< i << " " << j ;
+        } 
+    }
+   }
+   cout<<endl ;
 }
